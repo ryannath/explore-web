@@ -7,7 +7,7 @@ const useStyles = makeStyles({
     backgroundSize: 'cover',
     height: '100vh',
   }
-})
+});
 
 const Hero = () => {
   const classes = useStyles();
