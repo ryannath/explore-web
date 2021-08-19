@@ -1,6 +1,5 @@
 import Box from '@material-ui/core/Box'
-import { makeStyles, createStyles } from '@material-ui/core/styles';
-import { classes } from 'istanbul-lib-coverage';
+import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles({
   heroContainer: {
