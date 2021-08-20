@@ -4,7 +4,8 @@ import Container from '@material-ui/core/Container'
 
 const useStyles = makeStyles({
   root: {
-    padding: '5rem 0 5rem 0',
+    paddingTop: '5rem',
+    paddingBottom: '5rem',
   }
 });
 
@@ -13,6 +14,9 @@ const InfoSection = () => {
 
   return (
     <Container className={classes.root}>
+      <Typography variant='h3' component='h2'>
+        About
+      </Typography>
       <Typography variant='body1'>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
       incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
