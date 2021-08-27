@@ -1,16 +1,9 @@
-import './App.css';
-import Navigation from './components/Navigation';
-import Hero from './components/Hero';
-import InfoSection from './components/InfoSection';
-import Content from './components/Content'
+import Home from './pages/Home.js'
 
 function App() {
   return (
     <div className="App">
-      <Navigation />
-      <Hero />
-      <InfoSection />
-      <Content />
+      <Home />
     </div>
   );
 }
