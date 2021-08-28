@@ -8,7 +8,7 @@ const Home = () => {
   return (
     <>
       <Navigation />
-      <Hero />
+      <Hero image={'li-background.png'} />
       <InfoSection />
       <Content />
     </>
