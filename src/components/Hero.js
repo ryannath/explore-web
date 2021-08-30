@@ -1,43 +1,63 @@
-import { Typography } from '@material-ui/core';
+import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button'
 import Box from '@material-ui/core/Box'
 import { makeStyles } from '@material-ui/core/styles';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme => ({
+  // Section container, for background image
   heroContainer: {
     height: '100vh',
   },
 
+  // Content container, for heading and call to action, etc
   container: {
-    display: 'flex',
     position: 'relative',
-    top: '18%'
+    top: '18%',
+    // flexbox to center content
+    display: 'flex',
+    justifyContent: 'center',
   },
 
+  // The actual content
   content: {
+    // Creates a glass effect
     backgroundColor: 'rgba(255, 255, 255, 0.4)',
     borderRadius: 5,
     padding: '2rem 4rem',
-    marginRight: 'auto',
-    marginLeft: 'auto',
     backdropFilter: 'blur(16px) saturate(1.2)',
     textAlign: 'center',
 
     '& h1': {
       fontFamily: "Qwigley, cursive",
-      fontSize: 100,
-      paddingBottom: '1rem'
+      fontSize: '7rem',
     },
 
     '& p': {
-      fontSize: '1.2rem'
+      fontSize: '1.2rem',
+      paddingBottom: '1rem',
+    },
+
+    // Needed a smaller font size for mobile
+    [theme.breakpoints.down('xs')]: {
+      padding: '2rem 1rem',
+      '& h1': {
+        fontSize: '5rem',
+      },
+
+      '& p': {
+        fontSize: '1rem',
+      }
     }
-  }
-});
+  },
+
+}));
 
 
-
-const Hero = ({ image }) => {
+const Hero = ({ image, callToActionRef }) => {
   const classes = useStyles();
+
+  // This content will be placed on a glass-like card
+  // on top of a 100vh background image
   const content = (
     <Box className={classes.container}>
       <Box className={classes.content}>
@@ -47,6 +67,9 @@ const Hero = ({ image }) => {
         <Typography>
         Explore websites to inspire your design
         </Typography>
+        <Button variant='contained' color="secondary" href={callToActionRef}>
+          Learn More
+        </Button>
       </Box>
     </Box>
   )
