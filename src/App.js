@@ -1,4 +1,4 @@
-import { createTheme, ThemeProvider } from '@material-ui/core';
+import { createTheme, ThemeProvider, CssBaseline } from '@material-ui/core';
 import Home from './pages/Home.js'
 
 const defaultTheme = createTheme({
@@ -9,6 +9,10 @@ const defaultTheme = createTheme({
         paddingRight: '10%',
       }
     }
+  },
+  typography: {
+    fontFamily: '"Quicksand", sans-serif',
+    fontSize: 16
   }
 })
 
@@ -16,6 +20,7 @@ const defaultTheme = createTheme({
 function App() {
   return (
     <div className="App">
+      <CssBaseline />
       <ThemeProvider theme={defaultTheme}>
         <Home />
       </ThemeProvider>
