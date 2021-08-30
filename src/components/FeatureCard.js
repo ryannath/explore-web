@@ -16,11 +16,11 @@ const useStyles = makeStyles({
 
 });
 
-const FeatureCard = ({ image, desc }) => {
+const FeatureCard = ({ image, desc, url }) => {
   const classes = useStyles();
   return (
     <Card>
-      <CardActionArea>
+      <CardActionArea onClick={()=>window.open(url, '_blank')}>
         <CardMedia className={classes.media} image={image}/>
         <CardContent className={classes.cardContent}>
           <Typography>
