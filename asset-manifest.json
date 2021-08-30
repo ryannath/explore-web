@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/explore-web/static/css/main.12167364.chunk.css",
+    "main.js": "/explore-web/static/js/main.8aa599c4.chunk.js",
+    "main.js.map": "/explore-web/static/js/main.8aa599c4.chunk.js.map",
+    "runtime-main.js": "/explore-web/static/js/runtime-main.2b1939e9.js",
+    "runtime-main.js.map": "/explore-web/static/js/runtime-main.2b1939e9.js.map",
+    "static/js/2.f3decd36.chunk.js": "/explore-web/static/js/2.f3decd36.chunk.js",
+    "static/js/2.f3decd36.chunk.js.map": "/explore-web/static/js/2.f3decd36.chunk.js.map",
+    "static/js/3.00eceb63.chunk.js": "/explore-web/static/js/3.00eceb63.chunk.js",
+    "static/js/3.00eceb63.chunk.js.map": "/explore-web/static/js/3.00eceb63.chunk.js.map",
+    "index.html": "/explore-web/index.html",
+    "static/css/main.12167364.chunk.css.map": "/explore-web/static/css/main.12167364.chunk.css.map",
+    "static/js/2.f3decd36.chunk.js.LICENSE.txt": "/explore-web/static/js/2.f3decd36.chunk.js.LICENSE.txt",
+    "static/media/HomeIcon.466d7088.svg": "/explore-web/static/media/HomeIcon.466d7088.svg",
+    "static/media/Plants.02dc6f67.svg": "/explore-web/static/media/Plants.02dc6f67.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.2b1939e9.js",
+    "static/js/2.f3decd36.chunk.js",
+    "static/css/main.12167364.chunk.css",
+    "static/js/main.8aa599c4.chunk.js"
+  ]
+}
