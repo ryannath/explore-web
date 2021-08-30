@@ -8,7 +8,7 @@ const Home = () => {
   return (
     <>
       <Navigation />
-      <Hero image={'li-background.png'} />
+      <Hero image={'li-background.png'} callToActionRef='#Info' />
       <InfoSection />
       <Content />
     </>
