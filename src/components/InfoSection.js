@@ -59,7 +59,7 @@ const useStyles = makeStyles(theme => ({
   },
 
   sideCardTitle: {
-    fontSize: 36,
+    // fontSize: 36,
     marginBottom: '1rem',
     [theme.breakpoints.down('xs')]: {
       fontSize: 36,
@@ -92,7 +92,7 @@ const InfoSection = () => {
 
   const card = (
     <Card className={classes.sideCard}>
-      <Typography component='h2' className={classes.sideCardTitle}>
+      <Typography variant= 'h4' component='h2' className={classes.sideCardTitle}>
         Petualang
         <Typography component='span' className={classes.sideCardSubTitle}> •&nbsp;explorer </Typography>
       </Typography>
