@@ -19,7 +19,6 @@ const useStyles = makeStyles({
   background: {
     zIndex: -1,
     position:'absolute',
-    height: 'inherit',
     top: '5vh',
   },
 
@@ -38,6 +37,10 @@ const useStyles = makeStyles({
     zIndex: -2,
     top: 0,
 
+  },
+
+  sectionTitle: {
+    marginBottom: '1rem',
   }
 });
 
@@ -48,21 +51,24 @@ const featured = [
     desc: `Dribbble showcases a wide variety of design work from
     illustrations, mobile app design, website design, and logo.
     Users may also follow certain creators they are interested in, or
-    create their own portfolio to showcase the work they've done`
+    create their own portfolio to showcase the work they've done`,
+    url: 'https://dribbble.com/',
   },
   {
     img: 'behance-logo.jpeg',
     desc: `Behance is a website by Adobe that focuses on portfolio display.
     In many ways, it is simlar to dribbble, it has a multitude of design work
     in different forms and profiles to follow. The vertical layouting of each
-    work makes it more similar to websites`
+    work makes it more similar to websites`,
+    url: 'https://www.behance.net/',
   },
   {
     img: 'uiiiuiii-logo.jpg',
     desc: `Uiiiuiii provides a large number of tutorials in the creative field,
     including those on Photoshop and Illustrator. It also provides a number of website design
     to be taken as inspiration. The website and its content are in Chinese, however, this can
-    be overcomed using Chrome's translate page`
+    be overcomed using Chrome's translate page`,
+    url: 'https://uiiiuiii.com/',
   },
 ]
 
@@ -75,15 +81,16 @@ const Content = () => {
       <FeaturedBackground className={classes.background}/>
       <Wave className={classes.wave}/>
       <Box className={classes.section}>
-        <Typography variant='h4' component='h2'>
+        <Typography variant='h4' component='h2' className={classes.sectionTitle}>
           Featured
         </Typography>
         <Grid container spacing={2}>
           {featured.map((item) => (
-            <Grid item xs={12} md={4}>
+            <Grid item xs={12} md={4} key={item.toString()}>
               <FeatureCard
                 image={item.img}
                 desc={item.desc}
+                url={item.url}
               />
             </Grid>
           ))}
