@@ -86,7 +86,7 @@ const useStyles = makeStyles(theme => ({
 }));
 
 
-const Hero = ({ image, callToActionRef }) => {
+const Hero = ({ callToActionRef }) => {
   const { ref, end, scrollY } = usePosition();
   const y1 = useTransform(scrollY, [0, end], [0.2, 1]);
   const classes = useStyles();
