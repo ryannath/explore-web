@@ -5,7 +5,11 @@ const useStyles = makeStyles(theme => ({
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    margin: 'auto'
+    margin: '0 2rem',
+
+    [theme.breakpoints.down('sm')]: {
+      marginBottom: '2.8rem'
+    },
   },
 
   icon: {

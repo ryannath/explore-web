@@ -11,11 +11,15 @@ const useStyles = makeStyles(theme => ({
   // Section root, relative for background image positioning
   root: {
     overflow: 'hidden',
-    margin: '5rem 0rem',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    // padding to separate from other sections
+    margin: '5rem auto',
+    maxWidth: '90rem',
+    [theme.breakpoints.down('sm')]: {
+      marginLeft: '1.2rem',
+      marginRight: '1.2rem'
+    }
 
   },
 
@@ -46,7 +50,11 @@ const useStyles = makeStyles(theme => ({
     display: 'flex',
     flexWrap: 'wrap',
     justifyContent: 'center',
-    width: '60%'
+    width: '60%',
+
+    [theme.breakpoints.down('md')]: {
+      width: '90%'
+    },
   }
 }));
 
