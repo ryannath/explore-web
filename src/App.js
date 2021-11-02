@@ -11,7 +11,7 @@ const defaultTheme = createTheme({
     }
   },
   typography: {
-    fontFamily: '"Quicksand", sans-serif',
+    fontFamily: "'Poppins', sans-serif",
     fontSize: 16
   }
 })
