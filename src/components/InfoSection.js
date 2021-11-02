@@ -45,7 +45,7 @@ const useStyles = makeStyles(theme => ({
   iconContainer: {
     display: 'flex',
     flexWrap: 'wrap',
-    justifyContent: 'space-between',
+    justifyContent: 'center',
     width: '60%'
   }
 }));
