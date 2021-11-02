@@ -4,13 +4,19 @@ import Box from '@material-ui/core/Box';
 import { makeStyles } from '@material-ui/core/styles';
 import { motion, useViewportScroll, useTransform } from "framer-motion";
 import usePosition from './hooks/usePosition';
+import { withThemeCreator } from '@material-ui/styles';
+import { Minimize } from '@material-ui/icons';
+import { Link } from '@material-ui/core';
 
 const useStyles = makeStyles(theme => ({
   // Section container, for background image
   sectionContainer: {
-    height: '100vh',
+    height: 'clamp(40rem, 100vh, 50rem)',
     overflow: 'hidden',
     position: 'relative',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 
   sectionBackground: {
@@ -18,33 +24,49 @@ const useStyles = makeStyles(theme => ({
     width: '100%',
     objectFit: 'cover',
     position: 'absolute',
+    zIndex: 1,
+  },
+
+  sectionBackgroundOverlay: {
+    height: '100%',
+    width: '100%',
+    backgroundColor: 'black',
+    position: 'absolute',
+    zIndex: 2,
   },
 
   // Content container, for heading and call to action, etc
   contentContainer: {
     position: 'relative',
-    top: '18%',
-    // flexbox to center content
     display: 'flex',
-    justifyContent: 'center',
+    justifyItems: 'center',
+    border: '5px solid white',
+    zIndex: 100,
+    [theme.breakpoints.down('xs')]: {
+      top: '-2rem',
+    }
   },
 
   // The actual content
   content: {
     // Creates a glass effect
-    backgroundColor: 'rgba(255, 255, 255, 0.4)',
-    borderRadius: 5,
+    margin: '5rem 0rem',
+    // backgroundColor: 'rgba(255, 255, 255, 0.4)',
     padding: '2rem 4rem',
-    backdropFilter: 'blur(16px) saturate(1.2)',
+    // backdropFilter: 'blur(16px) saturate(1.2)',
     textAlign: 'center',
-
+    color: 'white',
     '& h1': {
-      fontFamily: "Qwigley, cursive",
-      fontSize: '7rem',
+      fontFamily: '"Roboto", sans-serif',
+      fontSize: '4.5rem',
+      fontWeight: 700,
     },
 
-    '& p': {
-      fontSize: '1.2rem',
+    '& a': {
+      color: 'white',
+      textDecoration: 'none',
+      fontStyle: 'italic',
+      fontSize: '1.5rem',
       paddingBottom: '1rem',
     },
 
@@ -52,10 +74,10 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.down('xs')]: {
       padding: '2rem 1rem',
       '& h1': {
-        fontSize: '5rem',
+        fontSize: '3rem',
       },
 
-      '& p': {
+      '& a': {
         fontSize: '1rem',
       }
     }
@@ -66,7 +88,7 @@ const useStyles = makeStyles(theme => ({
 
 const Hero = ({ image, callToActionRef }) => {
   const { ref, end, scrollY } = usePosition();
-  const y1 = useTransform(scrollY, [0, end], [1, 1.2]);
+  const y1 = useTransform(scrollY, [0, end], [0.2, 1]);
   const classes = useStyles();
 
   // This content will be placed on a glass-like card
@@ -75,21 +97,19 @@ const Hero = ({ image, callToActionRef }) => {
     <Box className={classes.contentContainer}>
       <Box className={classes.content}>
         <Typography variant='h1'>
-          Petualang
+          PETUALANG
         </Typography>
-        <Typography>
-        Explore websites to inspire your design
-        </Typography>
-        <Button variant='contained' color="secondary" href={callToActionRef}>
-          Learn More
-        </Button>
+        <Link href={callToActionRef}>
+          Explore the world
+        </Link>
       </Box>
     </Box>
   )
 
   return (
     <Box className={classes.sectionContainer} ref={ref}>
-      <motion.img src={image} alt='' className={classes.sectionBackground} style={{scale:y1}}/>
+      <motion.video src="stars.mp4" muted loop autoPlay className={classes.sectionBackground}/>
+      <motion.div className={classes.sectionBackgroundOverlay} style={{opacity:y1}}></motion.div>
       {content}
     </Box>
 
