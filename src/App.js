@@ -1,7 +1,13 @@
 import { createTheme, ThemeProvider, CssBaseline } from '@material-ui/core';
 import Home from './pages/Home.js'
 
-const defaultTheme = createTheme({
+let defaultTheme = createTheme({
+  typography: {
+    fontFamily: "'Poppins', sans-serif",
+    fontSize: 16,
+  }
+});
+defaultTheme =  createTheme(defaultTheme, {
   overrides: {
     MuiContainer: {
       maxWidthLg:{
@@ -10,6 +16,11 @@ const defaultTheme = createTheme({
       }
     },
     MuiTypography: {
+      // body1: {
+      //   [defaultTheme.breakpoints.down('md')]: {
+      //     fontSize: '1rem',
+      //   }
+      // },
       h4: {
         paddingBottom: '1rem',
         fontFamily: "'Roboto', sans-serif"
@@ -17,12 +28,7 @@ const defaultTheme = createTheme({
     },
   },
 
-  typography: {
-    fontFamily: "'Poppins', sans-serif",
-    fontSize: 16,
-  }
 })
-
 
 function App() {
   return (
