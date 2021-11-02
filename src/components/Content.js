@@ -5,27 +5,38 @@ import Box from '@material-ui/core/Box';
 import { makeStyles } from '@material-ui/core'
 // import { ReactComponent as FeaturedBackground } from './FeaturedBackground.svg';
 import FeaturedBackground from './FeaturedBackground';
-import Wave from './Wave';
+import Wave from './SVG/Wave';
 import FeatureCard from './FeatureCard'
 // import ReactLogo from './Wave.svg';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme => ({
   root: {
-    paddingBottom: '5rem',
     position: 'relative',
     overflow: 'hidden',
   },
 
-  background: {
-    zIndex: -1,
-    position:'absolute',
-    top: '5vh',
-  },
 
   section: {
-    paddingTop: '30vh',
-    paddingLeft: '15%',
-    paddingRight: '15%',
+    backgroundColor: '#0F161C',
+    color: 'white',
+    paddingBottom: '5rem'
+
+  },
+
+  contentContainer: {
+    maxWidth: '40rem',
+    margin: 'auto',
+    textAlign: 'center',
+    marginBottom: '3rem'
+  },
+
+  cardContainer: {
+    marginLeft: 'min(10rem, 10%)',
+    marginRight: 'min(10rem, 10%)',
+    [theme.breakpoints.down('xs')]: {
+      marginLeft: '2rem',
+      marginRight: '2rem',
+    }
   },
 
   media: {
@@ -33,16 +44,13 @@ const useStyles = makeStyles({
   },
 
   wave: {
-    position: 'absolute',
-    zIndex: -2,
-    top: 0,
-
+    position: 'relative',
+    top: '1rem',
+    zIndex: -1,
+    height: '7rem',
+    width: '100%'
   },
-
-  sectionTitle: {
-    marginBottom: '1rem',
-  }
-});
+}));
 
 
 const featured = [
@@ -78,25 +86,34 @@ const Content = () => {
   
   return (
     <Box className={classes.root}>
-      <FeaturedBackground className={classes.background}/>
+
       <Wave className={classes.wave}/>
       <Box className={classes.section}>
-        <Typography variant='h4' component='h2' className={classes.sectionTitle}>
-          Featured
-        </Typography>
-        <Grid container spacing={2}>
-          {featured.map((item) => (
-            <Grid item xs={12} md={4} key={item.toString()}>
-              <FeatureCard
-                image={item.img}
-                desc={item.desc}
-                url={item.url}
-              />
-            </Grid>
-          ))}
-        </Grid>
+        <Box className={classes.contentContainer}>
+          <Typography variant='h4' component='h2' className={classes.sectionTitle}>
+            DESIGN
+          </Typography>
+          <Typography>
+            Design can be a difficult process for both beginners and professionals alike.
+            Below are some websites to take inspirations from
+          </Typography>
+        </Box>
+        <Box className={classes.cardContainer}>
+          <Grid container spacing={2} style={{justifyContent: 'center'}}>
+            {featured.map((item) => (
+              <Grid item xs={12} sm={8} md={4} key={item.toString()}>
+                <FeatureCard
+                  image={item.img}
+                  desc={item.desc}
+                  url={item.url}
+                />
+              </Grid>
+            ))}
+          </Grid>
+        </Box>
       </Box>
     </Box>
+
   )
 }
 
