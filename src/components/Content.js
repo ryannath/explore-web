@@ -28,7 +28,11 @@ const useStyles = makeStyles(theme => ({
     maxWidth: '40rem',
     margin: 'auto',
     textAlign: 'center',
-    marginBottom: '3rem'
+    marginBottom: '3rem',
+    [theme.breakpoints.down('sm')]: {
+      marginLeft: '1.2rem',
+      marginRight: '1.2rem',
+    }
   },
 
   cardContainer: {
