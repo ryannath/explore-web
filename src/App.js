@@ -8,11 +8,18 @@ const defaultTheme = createTheme({
         paddingLeft: '10%',
         paddingRight: '10%',
       }
-    }
+    },
+    MuiTypography: {
+      h4: {
+        paddingBottom: '1rem',
+        fontFamily: "'Roboto', sans-serif"
+      }
+    },
   },
+
   typography: {
     fontFamily: "'Poppins', sans-serif",
-    fontSize: 16
+    fontSize: 16,
   }
 })
 
