@@ -2,6 +2,7 @@ import Navigation from '../components/Navigation';
 import Hero from '../components/Hero';
 import InfoSection from '../components/InfoSection';
 import Content from '../components/Content'
+import Footer from '../components/Footer';
 
 
 const Home = () => {
@@ -11,6 +12,7 @@ const Home = () => {
       <Hero callToActionRef='#Info' />
       <InfoSection />
       <Content />
+      <Footer />
     </>
   )
 }
