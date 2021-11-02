@@ -11,6 +11,8 @@ import { Link } from '@material-ui/core';
 const useStyles = makeStyles(theme => ({
   // Section container, for background image
   sectionContainer: {
+    margin: '0rem auto',
+    maxWidth: '90rem',
     height: 'clamp(40rem, 100vh, 60rem)',
     overflow: 'hidden',
     position: 'relative',

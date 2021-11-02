@@ -3,7 +3,9 @@ import Box from '@material-ui/core/Box';
 
 const useStyles = makeStyles(theme => ({
   root: {
-    backgroundColor: 'rgb(237,237,237)'
+    backgroundColor: 'rgb(237,237,237)',
+    margin: '0rem auto',
+    maxWidth: '90rem',
   },
 
   contentContainer: {

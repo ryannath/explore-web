@@ -17,7 +17,12 @@ const useStyles = makeStyles((theme) => ({
 
   homeLogo: {
     height: '1.3rem',
-  }
+  },
+  navContainer: {
+    margin: '0 auto',
+    maxWidth: '90rem',
+    width: '100%',
+  },
 }));
 
 const Navigation = () => {
@@ -30,7 +35,7 @@ const Navigation = () => {
       // style={{backgroundColor: (trigger ? '#fff': 'transparent')}}
       elevation={trigger ? 4 : 0}
     >
-      <Toolbar variant='dense'>
+      <Toolbar variant='dense' className={classes.navContainer}>
         <Button className={classes.homeButton} href='#'>
           <HomeLogo className={classes.homeLogo}/>
           Home

@@ -4,7 +4,6 @@ import Container from '@material-ui/core/Container'
 import Box from '@material-ui/core/Box';
 import { makeStyles } from '@material-ui/core'
 // import { ReactComponent as FeaturedBackground } from './FeaturedBackground.svg';
-import FeaturedBackground from './FeaturedBackground';
 import Wave from './SVG/Wave';
 import FeatureCard from './FeatureCard'
 // import ReactLogo from './Wave.svg';
@@ -13,6 +12,8 @@ const useStyles = makeStyles(theme => ({
   root: {
     position: 'relative',
     overflow: 'hidden',
+    margin: '0rem auto',
+    maxWidth: '90rem',
   },
 
 
