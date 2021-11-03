@@ -1,4 +1,7 @@
-import { makeStyles, Typography } from "@material-ui/core"
+import { Grow, makeStyles, Typography } from "@material-ui/core"
+import { motion, useAnimation } from "framer-motion";
+import { useEffect } from "react";
+import { useInView } from "react-intersection-observer";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -26,22 +29,34 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const Icon = (props) => {
+  const { ref, inView } = useInView({triggerOnce: true});
   const children = props.children;
   const text = props.text;
   const classes = useStyles();
 
+
+
   return (
-    <div className={classes.root}>
-      <div className={classes.icon}>{children}</div>
-      {
-        text ?
-        <Typography className={classes.iconText}>
-          {text}
-        </Typography>
-        :""
-      }
-    </div>
-  )
+    <Grow
+      in={inView}
+      {...(inView ? { timeout: 1250 } : {})}
+      ref={ref}
+      >
+      <div
+        ref={ref}
+        className={classes.root}>
+
+        <div className={classes.icon}>{children}</div>
+        {
+          text ?
+          <Typography className={classes.iconText}>
+            {text}
+          </Typography>
+          :""
+        }
+      </div>
+    </Grow>
+  );
 }
 
 export default Icon
