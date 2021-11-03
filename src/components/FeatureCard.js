@@ -12,7 +12,7 @@ const useStyles = makeStyles(theme => ({
   },
 
   cardContent: {
-    minHeight: 300
+    minHeight: 270
   },
 
   media: {
@@ -28,7 +28,11 @@ const useStyles = makeStyles(theme => ({
   },
 
   cardText: {
-    fontSize: '1rem'
+    fontSize: '1rem',
+    padding: '1rem',
+    [theme.breakpoints.down('md')]: {
+      padding: '0',
+    }
   }
 
 }));
