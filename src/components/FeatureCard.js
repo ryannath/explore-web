@@ -39,7 +39,7 @@ const FeatureCard = ({ image, desc, url }) => {
   return (
     <Grow
       in={inView}
-      {...(inView ? { timeout: 1500 } : {})}
+      {...(inView ? { timeout: 1200 } : {})}
       ref={ref}
       >
 
