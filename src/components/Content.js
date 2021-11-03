@@ -30,8 +30,7 @@ const useStyles = makeStyles(theme => ({
     textAlign: 'center',
     marginBottom: '3rem',
     [theme.breakpoints.down('sm')]: {
-      marginLeft: '1.2rem',
-      marginRight: '1.2rem',
+      padding: "0 1.2rem",
     }
   },
 
@@ -79,8 +78,7 @@ const featured = [
     img: 'uiiiuiii-logo.jpg',
     desc: `Uiiiuiii provides a large number of tutorials in the creative field,
     including those on Photoshop and Illustrator. It also provides a number of website design
-    to be taken as inspiration. The website and its content are in Chinese, however, this can
-    be overcomed using Chrome's translate page`,
+    to be taken as inspiration. However, the website and its content are in Chinese`,
     url: 'https://uiiiuiii.com/',
   },
 ]
@@ -104,7 +102,7 @@ const Content = () => {
           </Typography>
         </Box>
         <Box className={classes.cardContainer}>
-          <Grid container spacing={2} style={{justifyContent: 'center'}}>
+          <Grid container spacing={3} style={{justifyContent: 'center'}}>
             {featured.map((item) => (
               <Grid item xs={12} sm={8} md={4} key={item.toString()}>
                 <FeatureCard
