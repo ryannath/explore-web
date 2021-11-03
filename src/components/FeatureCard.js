@@ -3,7 +3,8 @@ import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
-import { makeStyles } from '@material-ui/core';
+import { Grow, makeStyles } from '@material-ui/core';
+import { useInView } from 'react-intersection-observer';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -34,17 +35,26 @@ const useStyles = makeStyles(theme => ({
 
 const FeatureCard = ({ image, desc, url }) => {
   const classes = useStyles();
+  const { ref, inView } = useInView({triggerOnce: true});
   return (
-    <Card className={classes.root}>
-      <CardActionArea onClick={()=>window.open(url, '_blank')}>
-        <CardMedia className={classes.media} image={image}/>
-        <CardContent className={classes.cardContent}>
-          <Typography className={classes.cardText}>
-            {desc}
-          </Typography>
-        </CardContent>
-      </CardActionArea>
-    </Card>  )
+    <Grow
+      in={inView}
+      {...(inView ? { timeout: 1500 } : {})}
+      ref={ref}
+      >
+
+      <Card className={classes.root}>
+        <CardActionArea onClick={()=>window.open(url, '_blank')}>
+          <CardMedia className={classes.media} image={image}/>
+          <CardContent className={classes.cardContent}>
+            <Typography className={classes.cardText}>
+              {desc}
+            </Typography>
+          </CardContent>
+        </CardActionArea>
+      </Card>
+    </Grow>
+  );
 }
 
 export default FeatureCard
